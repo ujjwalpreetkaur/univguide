@@ -1,6 +1,6 @@
 *{
-    margin: 10;
-    padding: 40;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 body{
@@ -9,20 +9,22 @@ body{
     color: black;
 }
 .heading{
-    background: rgb(99, 161, 212);
+   
     color: black;
-    padding: 20px ;
+    padding: 30px ;
     width: 100%;
+   
     text-align: center;
     font-style: italic;
     
 }
 .heading img{
-    width: 200px;
-    height: 250px;
-    border-radius: 75%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     float: left;
-    margin-right: 15px;
+    border-style: none;
+    
 }
 .container{
     display: flex;
@@ -30,10 +32,22 @@ body{
     align-items: center;
     margin: 0.1px;
     font-size: x-large;
+    text-align: center;
 }
 .search{
     margin-left: auto;
     font-size: x-large;
+    
+}
+button{
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor:pointer;
+}
+button:hover{
+    background-color: firebrick;
 }
 
 .search input[type="text"] {
@@ -46,19 +60,46 @@ nav ul{
     display: flex;
     justify-content: flex-start;
     padding: 15px 0;
+    list-style: none;
+    
 }
 nav ul li{
     margin: 15px;
 }
 nav ul li a{
-    color: black;
+    color:rgb(99, 161, 212);
     text-decoration: none;
 }
 nav ul li a:hover{
     text-decoration: underline;
 }
 img{
-    width: 1230px;
+    width: 100%;
+    border-style: solid;
     height: 500px;
-    margin: 8px;
+    text-align: center;
+}
+.main-container{
+    display: flex;
+    justify-content:space-between;
+    margin: 20px;
+}
+.Leftframe, .Centreframe, .Rightframe{
+    width: 30%;
+    padding: 15px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,01);
+}
+.Leftframe ul{
+    list-style: none;
+    
+}
+.Rightframe ul{
+    
+    list-style: none;
+}
+.Centreframe ul{
+    list-style: none;
+   
 }
