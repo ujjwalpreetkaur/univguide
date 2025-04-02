@@ -54,7 +54,7 @@ button:hover{
     padding: 15px;
     font-size: 25px;
     width: 250px; 
-    height: 75px;/* Width of the search bar */
+    height: 45px;/* Width of the search bar */
 }
 nav ul{
     display: flex;
