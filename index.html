@@ -6,13 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baru_Sahib_Navigation_System</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 </head>
 <body>
    <div class="heading">
+    <!-- website logo and heading -->
     <h1>Baru Sahib Navigation System <img src="logo.jpeg" alt="univguide"></h1>
     <h2>" Valley Of Divine Peace "</h2>
-   
    </div>
+   
    <div class="container">
     <nav>
         <ul>
@@ -26,17 +33,18 @@
         </ul>
     </nav>
    </div>
-    <!-- website logo -->
+   <div class="Search">
+    <input type="text" id="search-bar" placeholder="Search places...">
+    <button onclick="searchLocation()">Search</button>
+   </div>
+
+   <div id="map" style="height: 500px; width: 100%; border: 2px solid black"></div>
     
     <!-- rough map of the campus -->
      <div>
         <img src="baru_sahib_map.jpeg" alt="Baru_Sahib">
      </div>
 
-     <div class="Search">
-        <input type="text" id="search-bar" placeholder="Search places...">
-        <button onclick="searchLocation()">Search</button>
-    </div>
     
     <div class="main">
          <h2>About Us</h2>  
