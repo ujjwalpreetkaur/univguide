@@ -63,6 +63,8 @@ nav ul li{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 nav ul li a{
+    text-align: center;
+    font-size: x-large;
     color:rgb(49, 128, 193);
     text-decoration: none;
 }

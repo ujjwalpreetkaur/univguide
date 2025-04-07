@@ -35,8 +35,8 @@
     </nav>
 
     <div class="Search">
-            <label for="search">Search:</label>
-            <input list="search-options" id="search" placeholder="Explore Campus">
+            <label for="search"></label>
+            <input style="height: 30px; width: 200px;" list="search-options" id="search" placeholder="Explore Campus">
             <datalist id="search-options">
                 <option value="Entry"></option>
                 <option value="Eternal University"></option>
@@ -81,7 +81,13 @@
 
 
             </datalist>
-            <button onclick="searchLocation()">Search</button>
+            <button style="background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 0px;
+            cursor:pointer;
+            height: 30px;
+            width: 70px;" onclick="searchLocation()">Search</button>
     </div>
 
    </div>
