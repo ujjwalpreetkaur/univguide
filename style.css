@@ -45,15 +45,12 @@ h2{
     text-align: center;
 }
 
-<<<<<<< HEAD
 .search input[type="text"] {
     padding: 15px;
     font-size: 25px;
     width: 250px; 
     height: 45px;/* Width of the search bar */
 }
-=======
->>>>>>> f8c0fe31205d4e0c79602a76bc2a76bc9eef3c80
 nav ul{
     display: flex;
     justify-content: flex-end;
