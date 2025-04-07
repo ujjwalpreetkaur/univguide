@@ -7,10 +7,12 @@
     <title>Baru_Sahib_Navigation_System</title>
     <link rel="stylesheet" href="style.css">
     <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>/>
     
     <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+     
 
 </head>
 <body>
@@ -27,10 +29,6 @@
             <li><a href="campus.html">Campus</a></li>
             <li><a href="ContactPage.html">Contact Page</a></li>
             <li><a href="AboutUs.html">About Us</a></li>
-            <!-- <li><a href="university.html">University</a></li>
-            <li><a href="academy.html">Academy</a></li>
-            <li><a href="ib.html">IB</a></li>
-            <li><a href="hospital.html">Hospital</a></li> -->
         </ul>
     </nav>
 
@@ -81,20 +79,22 @@
 
 
             </datalist>
-            <button style="background-color: blue;
+            <button style="background-color: #007BFF;
             color: white;
+            padding: 10px;
             border: none;
-            border-radius: 0px;
+            border-radius: 25px;
             cursor:pointer;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             height: 30px;
-            width: 70px;" onclick="searchLocation()">Search</button>
+            width: 70px;" onclick="searchLocation()">Search</button>             
     </div>
 
    </div>
-  
 
-   <div id="map" style="height: 500px; width: 100%; border: 2px solid black"></div>
-    
+   <h2>Map User Location</h2>
+   <div id="map" style="height: 450px; width: 100%; margin: auto; border: 10px solid black"></div>
+   
     <!-- rough map of the campus -->
      <div>
         <img src="baru_sahib_map.jpeg" alt="Baru_Sahib">
@@ -109,4 +109,42 @@
         <p>By UJJWALPREET KAUR and SIMRAT KAUR</p>
     </footer>
 </body>
+
+<script>
+    var map = L.map('map')
+    map.setView([51.505, -0.09], 13);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+    {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+// this will provide the updated current position of the user
+navigator.geolocation.watchPosition(success, error);    
+// success is a function will help in fetching the longitude and latitude lines of the user's current location
+
+function success(pos) {
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+    const accuracy = pos.coords.accuracy; // tells us how good the value of longitude and latitude estimate is within a number of meters
+
+    //will add marker to represent the current location specifically
+    L.marker([lat,lng]).addTo(map);
+    L.circle([lat,lng], { radius:accuracy }).addTo(map);
+
+}
+
+function error(err) {
+// show error when current location is not fetched
+    if (err.cod === 1){
+        alert("Please allow geolocation access");
+    }
+    else {
+        alert("Cannot load current location")
+    }
+}
+
+</script>
+
 </html>
