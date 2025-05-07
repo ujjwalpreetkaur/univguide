@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+    .Photo img{
+        width: 100%;
+        border:  5px solid black;
+        height: 500px;
+        text-align: center;
+        
+    }
+    .heading h2{
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-family: cursive;
+        font-style: italic;
+        font-size: xx-large;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    .Main_container{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px;
+    }
+    .first_card, .second_card{
+        width: 48%;
+        padding: 30px;
+        background:rgb(126, 186, 238);
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,01);
+    }
+    .first_card h3, .second_card h3{
+        text-align: center;
+        font-size: x-large;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-style: oblique;
+        margin-bottom: 10px;
+    }
+    .first_card p, .second_card p{
+        text-align: justify;
+        font-size: larger;
+        margin-bottom: 10px;
+    }
+    .first_card ul, .second_card ul{
+        margin-top: 20px;
+        margin-left: 30%;
+    }
+    .first_card ul li, .second_card ul li{
+        list-style: none;
+        font-size: large;
+    }
+    .card-body{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between; 
+    }
+    .card-link{
+        margin-left: 120px;
+        margin-right: 120px;
+        font-size: large;
+    }
+    .main_Container{
+        display: flex;
+        justify-content:space-between;
+        margin: 36.5px;
+    }
+    .third_card, .fourth_card{
+        width: 49.25%;
+        padding: 30px;
+        background:rgb(126, 186, 238);
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,01);
+    }
+    .third_card h3, .fourth_card h3{
+        text-align: center;
+        font-size: x-large;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-style: oblique;
+        margin-bottom: 10px;
+    }
+    .third_card p, .fourth_card p{
+        text-align: justify;
+        font-size: larger;
+        margin-bottom: 10px;
+    }
+    .third_card ul, .fourth_card ul{
+        margin-top: 20px;
+        margin-left: 30%;
+    }
+    .third_card ul li, .fourth_card ul li{
+        list-style: none;
+        font-size: large;
+    }
+
