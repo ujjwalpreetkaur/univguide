@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baru_Sahib_Navigation_System</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>/>
     
@@ -16,25 +16,19 @@
 
 </head>
 <body>
-   <div class="heading">
-    <!-- website logo and heading -->
-    <h1>Baru Sahib Navigation System <img src="logo.jpeg" alt="univguide"></h1>
-    <h2>" Valley Of Divine Peace "</h2>
-   </div>
-   
-   <div class="container">
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="campus.html">Campus</a></li>
-            <li><a href="ContactPage.html">Contact Page</a></li>
-            <li><a href="AboutUs.html">About Us</a></li>
-        </ul>
-    </nav>
+    <section class="header">
+        <div class="logo">
+            <img src="logo.jpeg" alt="univguide">
+        </div>
+        <div class="heading">
+            <h1>Baru Sahib Navigation System</h1>
+            <h2>" Valley Of Divine Peace "</h2>
+        </div>
+    </section>
 
-    <div class="Search">
-            <label for="search"></label>
-            <input style="height: 30px; width: 200px;" list="search-options" id="search" placeholder="Explore Campus">
+    <div class="search-container">
+        <div class="search-bar">
+            <input class="searchbox" list="search-options" id="search" placeholder="Explore Campus..." />
             <datalist id="search-options">
                 <option value="Entry"></option>
                 <option value="Eternal University"></option>
@@ -76,56 +70,68 @@
                 <option value="ACET Mess"></option>
                 <option value="Gas Godown"></option>
                 <option value="Akal IB Interntional School"></option>
-
-
             </datalist>
-            <button style="background-color: blue;
-            color: white;
-            border: none;
-            border-radius: 0px;
-            cursor:pointer;
-            height: 30px;
-            width: 70px;" onclick="searchLocation()">Search</button>             
-    </div>
-    
-   </div>
-   <div  class="image">
+            <button onclick="searchLocation()" class="search-btn">Search</button>
+        </div>
 
-        <video autoplay muted loop style="width:1500px; height: 600px; border: 10px solid black;border-radius: 10px;" src="video.mp4"></video>
-        <p style="font-family: cursive;font-size: larger;font-style: italic;margin-top: 0px;background-color: rgb(126, 186, 238);margin: 60px;border-radius: 10px; border: 50px solid rgb(126, 186, 238) ;"><b>"Nestled in the serene hills of Sirmour, Himachal Pradesh,<br>Baru Sahib is widely known as the "Valley of Divine Peace." Spanning 450 acres, the campus is a hub of education, spirituality, and community service, offering a tranquil and enriching environment for students and visitors alike."</b>
-        </p>
-   </div>
-   <img style="margin-top: 30px; border-radius: 25px;" src="baru.jpg" alt="baru">
-
-   <div style="margin: 30px;padding: 0px;" class="container">
-        <div style="background-color: rgb(118, 183, 240);margin: 60px;border-radius: 10px; border: 50px solid rgb(126, 186, 238) ;" class="LeftFrame">
-            <ul><h2 style="font-style: italic;font-style: italic;text-align: center;text-decoration: underline; margin-left: 40px;">Map User Location-></h2>
-            <p ><b>Baru Sahib is home to:</b><br><br>
-
-                <b>Educational Institutions</b> – Eternal University & Akal Academy<br>
-                
-                <b>Multi-Specialty Charitable Hospital</b><br>
-                
-                <b>Gurudwara Sahib</b> – A spiritual center fostering peace and harmony <br>
-
-                
-                <b>Bank & Post Office</b> – Essential services within the campus <br>
-                
-                <b>Fuel Station</b> – Ensuring convenience for residents and visitors</p></ul>
-            
+        <div class="menu-container">
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <nav class="nav-links" id="navLinks">
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Campus</a>
+              <a href="#">Login</a>
+            </nav>
+        </div>
+    </div>    
+    <section class="interactions">
+        <div class="vedio">
+            <video autoplay muted loop src="video.mp4"></video>
+        </div>
+        <div class="qoute">
+            <p><b>"Nestled in the serene hills of Sirmour, Himachal Pradesh,<br>Baru Sahib is widely known as the "Valley of Divine Peace." Spanning 450 acres, the campus is a hub of education, spirituality, and community service, offering a tranquil and enriching environment for students and visitors alike."</b></p>
+        </div>
+        <div class="image">
+            <img src="baru.jpg" alt="baru">
+        </div>
+    </section>
+    <section class="frame-containers">
+        <div class="LeftFrame">
+            <h1>MAP USER LOCATION</h1>
+            <ol>
+                <li>
+                    <h5>Educational Institutions</h5>
+                    <p>Eternal University & Akal Academy</p>
+                </li>
+                <li>
+                    <h5>Multi-Specialty Charitable Hospital</h5>
+                </li>
+                <li>
+                    <h5>Gurudwara Sahib</h5>
+                    <p>A spiritual center fostering peace and harmony</p>
+                </li>
+                <li>
+                    <h5>Bank & Post Office</h5>
+                    <p>Essential services within the campus</p>
+                </li>
+                <li>
+                    <h5>Fuel Station</h5>
+                    <p>Ensuring convenience for residents and visitors</p>
+                </li>
+            </ol>
         </div>
         <div class="RightFrame">
-            <ul><iframe   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13785.590205913552!2d77.63229764019978!3d30.741759081334897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f171658cc4d4d%3A0x4c5e1f637b96d149!2sBaru%20Sahib%2C%20Himachal%20Pradesh%20173001!5e0!3m2!1sen!2sin!4v1712228904247!5m2!1sen!2sin" 
-                width="800px" 
-                height="500" 
-                
-                style="border:10px solid black; border-radius:10px;" 
-                
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"></iframe></ul>
-        </div>   
-
-   </div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13785.590205913552!2d77.63229764019978!3d30.741759081334897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f171658cc4d4d%3A0x4c5e1f637b96d149!2sBaru%20Sahib%2C%20Himachal%20Pradesh%20173001!5e0!3m2!1sen!2sin!4v1712228904247!5m2!1sen!2sin" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>      
+    </section>
    
 </body> 
 
