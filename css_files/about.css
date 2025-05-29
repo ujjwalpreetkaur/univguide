@@ -1,0 +1,148 @@
+.header{
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow:#343a40 0px 0px 10px 0px;
+}
+
+.logo{
+    flex: 1 1 150px;
+    height: auto;
+    margin: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    width: 50%;
+    max-width: 50%;
+    height: 100%;
+}
+
+.heading{
+    flex: 2 1 100px;
+    text-align: center;
+}
+.heading h1{
+    font-size: 2.5em;
+    color: rgb(25, 25, 99);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.heading h2{
+    font-size: 1.5em;
+    color: royalblue;
+    margin: 0;
+}
+
+
+@media only screen and (max-width:768px){
+    .header{
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo, .heading{
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .heading h1{
+        font-size: 2.5em;
+    }
+    .heading h2{
+        font-size: 1.5em;
+        margin-bottom: 0;
+    }
+    .logo img{
+        max-width: 20%;
+    }
+}
+
+@media (min-width: 1200px) {
+  .heading h1 {
+    font-size: 3em;
+  }
+
+  .heading h2 {
+    font-size: 1.8em;
+  }
+
+  .logo img {
+    max-width: 120px;
+  }
+}
+
+
+.menu-container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1 1 40%;
+  text-align: right;
+}
+
+.hamburger{
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.hamburger span{
+  height: 3px;
+  width: 25px;
+  background: black;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.nav-links a{
+  margin-left: 1em;
+  text-decoration: none;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+.menu-container {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1em;
+  }
+}
+
+.main{
+    margin: auto;
+}
+
+.main h1{
+    color: rgb(21, 59, 132);
+    text-decoration: underline; 
+    text-align: center;
+    font-size: 46px;
+}
+
+.main h2{
+    text-align: justify; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 34px;
+}
+
+.main p{
+    font-size: 24px;
+}
+
+.main pre{
+    font-size: 20px;
+}

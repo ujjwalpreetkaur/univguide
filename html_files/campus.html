@@ -5,26 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus</title>
-    <link rel="stylesheet" href="campus.css">
+    <link rel="stylesheet" href="/css_files/campus.css">
 </head>
 <body>
-    <div class="heading">
-        <H1>Baru Sahib Navigation System <img src="logo.jpeg" alt="univguide"></H1>
-        <h2>" Valley Of Divine Peace "</h2>
-    </div>
-    <div class="container">
-        <nav>
-            <ul>
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="campus.html">Campus</a></li>
-                <li><a href="ContactPage.html">Contact Page</a></li>
-                <li><a href="AboutUs.html">About Us</a></li>
-               
-            </ul>
-        </nav>
-        <div class="Search">
-            <label for="search"></label>
-            <input style="height: 30px; width: 200px;" list="search-options" id="search" placeholder="Explore Campus">
+    <section class="header">
+        <div class="logo">
+            <img src="/assets/logo.jpeg" alt="univguide">
+        </div>
+        <div class="heading">
+            <h1>Baru Sahib Navigation System</h1>
+            <h2>" Valley Of Divine Peace "</h2>
+        </div>
+    </section>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <input class="searchbox" list="search-options" id="search" placeholder="Explore Campus..." />
             <datalist id="search-options">
                 <option value="Entry"></option>
                 <option value="Eternal University"></option>
@@ -66,21 +62,27 @@
                 <option value="ACET Mess"></option>
                 <option value="Gas Godown"></option>
                 <option value="Akal IB Interntional School"></option>
-
-
             </datalist>
-            <button style="background-color: blue;
-            color: white;
-            border: none;
-            border-radius: 0px;
-            cursor:pointer;
-            height: 30px;
-            width: 70px;" onclick="searchLocation()">Search</button>
+            <button onclick="searchLocation()" class="search-btn">Search</button>
         </div>
-       </div>
+
+        <div class="menu-container">
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <nav class="nav-links" id="navLinks">
+              <a href="/html_files/index.html">Home</a>
+              <a href="/html_files/AboutUs.html">About</a>
+              <a href="/html_files/campus.html">Campus</a>
+              <a href="#">Login</a>
+            </nav>
+        </div>
+    </div> 
        
        <div class="Photo">
-            <img src="baru_sahib_map.jpeg" alt="Baru_Sahib_Map">
+            <img src="/assets/baru_sahib_map.jpeg" alt="Baru_Sahib_Map">
        </div>
 
        <div class="heading">
