@@ -77,8 +77,6 @@
     max-width: 120px;
   }
 }
-
-
 .menu-container{
   display: flex;
   justify-content: flex-start;
@@ -121,29 +119,37 @@
     margin-top: 1em;
   }
 }
-
-.main{
-    margin: auto;
+.Contact{
+  background-color:  rgb(190, 219, 244);
+  margin-top: 40px;
+  margin-left: 300px;
+  width: 900px;
+  height: 700px;
+  border: 5px solid rgb(91, 170, 239);
 }
-
-.main h1{
-    color: rgb(21, 59, 132);
-    text-decoration: underline; 
+.Contact h2{
     text-align: center;
-    font-size: 46px;
+    font-size: 80px;
 }
-
-.main h2{
-    text-align: justify; 
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 34px;
+.Contact label{
+    margin-top: 10px;
+    margin-left: 400px;
+    font-size: 40px;
 }
-
-.main p{
-    font-size: 24px;
+.Contact input{
+    margin-top: 20px;
+    margin-left: 250px;
+    width: 400px;
+    height: 30px;
 }
-
-.main pre{
-    font-size: 20px;
+.Contact button{
+    background-color: rgb(126, 186, 238);  
+    margin-top: 50px;
+    margin-left: 320px;
+    padding: 15px;  
+    width:32%;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor:pointer;  
 }
-

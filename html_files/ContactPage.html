@@ -4,49 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baru_Sahib_Navigation_System</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css_files/contactpage.css">
 </head>
 <body>
-    <div class="heading">
-        <H1>Baru Sahib Navigation System <img src="logo.jpeg" alt="univguide"></H1>
-        <h2>" Valley Of Divine Peace "</h2>
-    </div>
-       <div class="container">
-        <nav>
-            <ul>
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="campus.html">Campus</a></li>
-                <li><a href="ContactPage.html">Contact Page</a></li>
-                <li><a href="AboutUs.html">About Us</a></li>
-               
-            </ul>
-        </nav>
+    <section class="header">
+        <div class="logo">
+            <img src="/assets/logo.jpeg" alt="univguide">
+        </div>
+        <div class="heading">
+            <h1>Baru Sahib Navigation System</h1>
+            <h2>" Valley Of Divine Peace "</h2>
+        </div>
+    </section>
+        
+        <div class="menu-container">
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <nav class="nav-links" id="navLinks">
+              <a href="/html_files/index.html">Home</a>
+              <a href="/html_files/AboutUs.html">About</a>
+              <a href="/html_files/campus.html">Campus</a>
+              <a href="#">Login</a>
+            </nav>
         </div>
         
-            <div style="background-color:  rgb(190, 219, 244);" class="Contact">
+            <div  class="Contact">
                 <form action="Contact Form" onsubmit="return validateForm()">
                     <H2>Contact Page</H2>
                     <label for="name">Name</label>
-                    <br>
-                    <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
-                    <br><br>
-                    <label for="email">Email</label>
-                    <br>
-                    <input type="email" name="email" id="email" placeholder="Enter Your E-mail ID">
-                    <br><br>
-                    <label for="message">Message</label>
-                    <br>
-                    <input type="text" name="message" id="message" placeholder="Your Message">
-                    <br><br>
                     
-                    <button style=" background-color: rgb(126, 186, 238);  
-                    margin-top: 5px;
-                    padding: 15px;  
-                    width:32%;
-                    height: 50px;
-                    border: none;
-                    border-radius: 4px;
-                    cursor:pointer;" type="submit">Send</button>
+                    <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+                    
+                    <label for="email">Email</label>
+                    
+                    <input type="email" name="email" id="email" placeholder="Enter Your E-mail ID">
+                    
+                    <label for="message">Message</label>
+                    
+                    <input type="text" name="message" id="message" placeholder="Your Message">
+                    
+                    
+                    <button  type="submit">Send</button>
                 </form>
             </div>
         
