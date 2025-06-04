@@ -344,3 +344,28 @@ body {
   }
 }
 
+footer{
+  background-color:rgb(118, 183, 240) ;
+  display: inline-flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  color: black;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+
+.foot1 img{
+  border: 2px solid black;
+  border-radius: 25%;
+  height: 100px;
+}
+
+
+.foot2 a{
+  text-decoration: none;
+  color: black;
+}
+
