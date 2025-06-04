@@ -31,6 +31,21 @@
     </section>
 
     <div class="search-container">
+
+        <div class="menu-container">
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <nav class="nav-links" id="navLinks">
+              <a href="/html_files/index.html"><b>Home</b></a>
+              <a href="/html_files/AboutUs.html"><b>About</b></a>
+              <a href="/html_files/campus.html"><b>Campus</b></a>
+              <a href="/html_files/ContactPage.html"><b>Contact</b></a>
+            </nav>
+        </div>
+
         <div class="search-bar">
             <input class="searchbox" list="search-options" id="search" placeholder="Explore Campus..." />
             <datalist id="search-options">
@@ -77,20 +92,6 @@
             </datalist>
             <button onclick="searchLocation()" class="search-btn">Search</button>
         </div>
-
-        <div class="menu-container">
-            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <nav class="nav-links" id="navLinks">
-              <a href="/html_files/index.html">Home</a>
-              <a href="/html_files/AboutUs.html">About</a>
-              <a href="/html_files/campus.html">Campus</a>
-              <a href="#">Login</a>
-            </nav>
-        </div>
     </div>    
     <section class="interactions">
         <div class="vedio">
@@ -106,27 +107,17 @@
     <section class="frame-containers">
         <div class="LeftFrame">
             <h1>MAP USER LOCATION</h1>
-            <ol>
-                <li>
-                    <h5>Educational Institutions</h5>
-                    <p>Eternal University & Akal Academy</p>
-                </li>
-                <li>
-                    <h5>Multi-Specialty Charitable Hospital</h5>
-                </li>
-                <li>
-                    <h5>Gurudwara Sahib</h5>
-                    <p>A spiritual center fostering peace and harmony</p>
-                </li>
-                <li>
-                    <h5>Bank & Post Office</h5>
-                    <p>Essential services within the campus</p>
-                </li>
-                <li>
-                    <h5>Fuel Station</h5>
-                    <p>Ensuring convenience for residents and visitors</p>
-                </li>
-            </ol>
+            <pre>
+<b>Educational Institutions</b>
+Eternal University & Akal Academy
+<b>Multi-Specialty Charitable Hospital</b>
+<b>Gurudwara Sahib</b>
+A spiritual center fostering peace and harmony    
+<b>Bank & Post Office</b>
+Essential services within the campus
+<b>Fuel Station</b>
+Ensuring convenience for residents and visitors
+            </pre>
         </div>
         <div class="RightFrame">
             <iframe 
