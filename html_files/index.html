@@ -1,23 +1,15 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baru_Sahib_Navigation_System</title>
     <link rel="stylesheet" href="/css_files/index.css">
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <!-- mapmyindia css -->
-    <link href="https://apis.mappls.com/advancedmaps/v1/0aaef9581e790ab18edf9378d9168aca/map_load?v=1.5" rel="stylesheet">
-    <!-- mapmyindia js -->
-    <script src="https://apis.mappls.com/advancedmaps/v1/0aaef9581e790ab18edf9378d9168aca/map_sdk?v=1.5"></script>
-    
-     
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
 </head>
 <body>
     <section class="header">
@@ -33,7 +25,7 @@
     <div class="search-container">
 
         <div class="menu-container">
-            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="hamburger" id="hamburger">
               <span></span>
               <span></span>
               <span></span>
@@ -47,52 +39,44 @@
         </div>
 
         <div class="search-bar">
-            <input class="searchbox" list="search-options" id="search" placeholder="Explore Campus..." />
+            <input type="text" class="searchbox" list="search-options" id="destinationSearch" placeholder="Explore Campus..." />
             <datalist id="search-options">
-                <option value="Entry"></option>
                 <option value="Eternal University"></option>
-                <option value="Akal College Of Engineering"></option>
-                <option value="Incinerator Plant"></option>
-                <option value="Akal College Of Nursing ACN"></option>
-                <option value="Akal Charitable Hospital ACH"></option>
-                <option value="ACET Workshop"></option>
-                <option value="Tennis Play Ground"></option>
-                <option value="Akal Academy Play Ground"></option>
-                <option value="Adventure Camp"></option>
-                <option value="Corpentry Workshop"></option>
-                <option value="Fabrication Workshop"></option>
-                <option value="Teacher's Colony"></option>
-                <option value="Granary"></option>
-                <option value="Teachers Training Centre"></option>
-                <option value="P.R.O and H.R Department"></option>
+                <option value="New Girls Hostel"></option>
+                <option value="Akal College Of Nursing"></option>
+                <option value="Apple A Day"></option>
+                <option value="Akal Charitable Hospital"></option>
+                <option value="Tennis Court"></option>
+                <option value="Helipad Akal Academy Baru Sahib"></option>
+                <option value="Teacher Building"></option>
+                <option value="Solar Power Plant"></option>
                 <option value="Akal Academy Baru Sahib"></option>
-                <option value="Akal Academy Hostel"></option>
-                <option value="Akal Academy Main Office"></option>
-                <option value="State Bank Of India ATM"></option>
-                <option value="Akal Workshop And Petrol Pump"></option>
-                <option value="Akal Water Treatment Plant"></option>
-                <option value="Akal Sewarage Treatment Plant"></option>
-                <option value="Akal Organic Manure Plant"></option>
-                <option value="Akal Cold Storage "></option>
-                <option value="Akal Bakery"></option>
-                <option value="11 KV Sub Station"></option>
-                <option value="Automatic Laundry"></option>
-                <option value="Akal Milk Dairy"></option>
-                <option value="Gurudwara Baru Sahib"></option>
-                <option value="Enquiry And Reception"></option>
-                <option value="Guest House"></option>
-                <option value="Larger Hall"></option>
-                <option value="Ancient Gurudwara Sahib"></option>
-                <option value="Akal Printing Press"></option>
-                <option value="Akal Vocational Institute For Boys"></option>
-                <option value="ACET And ACN Hostel"></option>
-                <option value="ACET Mess"></option>
-                <option value="Gas Godown"></option>
-                <option value="Akal IB Interntional School"></option>
+                <option value="Guest Room"></option>
+                <option value="SBI ATM"></option>
+                <option value="Branch Post Office"></option>
+                <option value="Baru Sahib Gurudwara"></option>
+                <option value="VIP Building"></option>
+                <option value="Chango Temple"></option>
+                <option value="Sangat Building"></option>
+                <option value="Amphitheatre"></option>
+                <option value="IB School"></option>
             </datalist>
-            <button onclick="searchLocation()" class="search-btn">Search</button>
+            <button id="getDirections" onclick="getDirections()" class="search-btn">Search</button>
         </div>
     </div>    
+    <div id="map" style="height: 500px; width: 100%;"></div>
+    <div id="location-info" style="margin-top: 10px; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
+    </div>
+    <br>
+
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <script src="app.js"></script>
+
+
     <section class="interactions">
         <div class="vedio">
             <video autoplay muted loop src="/assets/video.mp4"></video>
@@ -127,7 +111,7 @@ Ensuring convenience for residents and visitors
             </iframe>
         </div>      
     </section>
-    <footer>
+           <footer>
         <div class="foot1">
             <img src="/assets/logo.jpeg" alt="logo">
             <p>Explore the campus.</p>
@@ -143,7 +127,9 @@ Ensuring convenience for residents and visitors
             <li>MapMyIndia</li>
         </div>
     </footer>
-   
+   <script src="/js/common.js"></script>
+   <!-- <script src="/js/route.js"></script> -->
+    <script src="/js/aap.js"></script>
 </body> 
 
 </html>
