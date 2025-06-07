@@ -1,25 +1,30 @@
-function validateForm(){
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+function validateForm() {
+    // Get form input values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-       if (!name || !email || !message) {
-        alert("Please fill out all fields.");
+    // Basic validation
+    if (!name || !email || !message) {
+        alert("Please fill in all fields.");
         return false;
     }
 
-    if (!email.includes("@")) {
-        alert("Please enter a valid email.");
+    // Email format check using regex
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address.");
         return false;
     }
 
+    // Simulate sending to server
     const formData = {
         name,
         email,
         message
     };
 
-    console.log("Form submitted successfully:", formData);
+    console.log("Form submitted successfully!", formData);
 
     // You can later replace this part with a real fetch to backend
     /*
@@ -39,16 +44,48 @@ function validateForm(){
         console.error(error);
     });
     */
-   
-    alert("Thank you for contacting us, " + name + "! We will get back to you soon.");
 
-    //it will prevent default form submission
+    alert("Form submitted successfully!");
+
+    // Prevent default form submission
     return false;
-
-
-    // // clear the form fields
-    // document.getElementById("name").value = "";
-    // document.getElementById("email").value = "";
-    // document.getElementById("message").value = "";
-
 }
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const form = document.querySelector("form"); // adjust selector if needed
+
+//     form.addEventListener("submit", async (e) => {
+//         e.preventDefault();
+
+//         const name = document.getElementById("name").value.trim();
+//         const email = document.getElementById("email").value.trim();
+//         const message = document.getElementById("message").value.trim();
+
+//         const response = await fetch("http://localhost/univguide-1/contact.php", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({ name, email, message })
+//         });
+
+//         const result = await response.json();
+
+//         if (result.success) {
+//             alert("✅ Message sent successfully!");
+//             form.reset();
+//         } else {
+//             alert("❌ Error: " + result.message);
+//         }
+//     });
+// });
+
