@@ -255,80 +255,58 @@
         font-weight: bold;
         text-decoration: underline;
     }
-    .Main_container{
-        display: flex;
-        justify-content: space-evenly;
-        margin: 20px;
+
+    .Main_div{
+      display: grid;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
     }
-    .first_card, .second_card{
-        width: 48%;
-        padding: 30px;
-        background:rgb(126, 186, 238);
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,01);
+
+    @media (min-width: 992px) {
+      .Main_div{
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
-    .first_card h3, .second_card h3{
-        text-align: center;
-        font-size: x-large;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-style: oblique;
-        margin-bottom: 10px;
+    @media (min-width: 600px) and (max-width: 991px) {
+      .Main_div {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
-    .first_card p, .second_card p{
-        text-align: justify;
-        font-size: larger;
-        margin-bottom: 10px;
+    @media (max-width: 599px) {
+      .Main_div {
+        grid-template-columns: 1fr;
+      }
     }
-    .first_card ul, .second_card ul{
-        margin-top: 20px;
-        margin-left: 30%;
+
+    .box {
+      border: 2px solid gray;
+      border-radius: 20px;
+      text-align: center;
+      padding: 25px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background-color: #fff;
     }
-    .first_card ul li, .second_card ul li{
-        list-style: none;
-        font-size: large;
+
+    .box img{
+      justify-content: center;
+      margin: 10px;
+      border: 1px solid black;
+      border-radius: 10px;
+      max-width: 95%;
     }
-    .card-body{
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-between; 
+
+    .box h4{
+      font-size: 24px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: rgb(47, 47, 165);
+      text-decoration: underline;
     }
-    .card-link{
-        margin-left: 120px;
-        margin-right: 120px;
-        font-size: large;
+    .box p{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-style: italic;
     }
-    .main_Container{
-        display: flex;
-        justify-content:space-between;
-        margin: 36.5px;
-    }
-    .third_card, .fourth_card{
-        width: 49.25%;
-        padding: 30px;
-        background:rgb(126, 186, 238);
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,01);
-    }
-    .third_card h3, .fourth_card h3{
-        text-align: center;
-        font-size: x-large;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-style: oblique;
-        margin-bottom: 10px;
-    }
-    .third_card p, .fourth_card p{
-        text-align: justify;
-        font-size: larger;
-        margin-bottom: 10px;
-    }
-    .third_card ul, .fourth_card ul{
-        margin-top: 20px;
-        margin-left: 30%;
-    }
-    .third_card ul li, .fourth_card ul li{
-        list-style: none;
-        font-size: large;
-    }
+
     footer{
   background-color:rgb(118, 183, 240) ;
   display: inline-flex;

@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus</title>
     <link rel="stylesheet" href="/css_files/campus.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+
 </head>
 <body>
     <section class="header">
@@ -35,152 +41,145 @@
         </div>
 
         <div class="search-bar">
-            <input class="searchbox" list="search-options" id="search" placeholder="Explore Campus..." />
+            <input type="text" class="searchbox" list="search-options" id="destinationSearch" placeholder="Explore Campus..." />
             <datalist id="search-options">
-                <option value="Entry"></option>
                 <option value="Eternal University"></option>
-                <option value="Akal College Of Engineering"></option>
-                <option value="Incinerator Plant"></option>
-                <option value="Akal College Of Nursing ACN"></option>
-                <option value="Akal Charitable Hospital ACH"></option>
-                <option value="ACET Workshop"></option>
-                <option value="Tennis Play Ground"></option>
-                <option value="Akal Academy Play Ground"></option>
-                <option value="Adventure Camp"></option>
-                <option value="Corpentry Workshop"></option>
-                <option value="Fabrication Workshop"></option>
-                <option value="Teacher's Colony"></option>
-                <option value="Granary"></option>
-                <option value="Teachers Training Centre"></option>
-                <option value="P.R.O and H.R Department"></option>
+                <option value="New Girls Hostel"></option>
+                <option value="Akal College Of Nursing"></option>
+                <option value="Apple A Day"></option>
+                <option value="Akal Charitable Hospital"></option>
+                <option value="Tennis Court"></option>
+                <option value="Helipad Akal Academy Baru Sahib"></option>
+                <option value="Teacher Building"></option>
+                <option value="Solar Power Plant"></option>
                 <option value="Akal Academy Baru Sahib"></option>
-                <option value="Akal Academy Hostel"></option>
-                <option value="Akal Academy Main Office"></option>
-                <option value="State Bank Of India ATM"></option>
-                <option value="Akal Workshop And Petrol Pump"></option>
-                <option value="Akal Water Treatment Plant"></option>
-                <option value="Akal Sewarage Treatment Plant"></option>
-                <option value="Akal Organic Manure Plant"></option>
-                <option value="Akal Cold Storage "></option>
-                <option value="Akal Bakery"></option>
-                <option value="11 KV Sub Station"></option>
-                <option value="Automatic Laundry"></option>
-                <option value="Akal Milk Dairy"></option>
-                <option value="Gurudwara Baru Sahib"></option>
-                <option value="Enquiry And Reception"></option>
-                <option value="Guest House"></option>
-                <option value="Larger Hall"></option>
-                <option value="Ancient Gurudwara Sahib"></option>
-                <option value="Akal Printing Press"></option>
-                <option value="Akal Vocational Institute For Boys"></option>
-                <option value="ACET And ACN Hostel"></option>
-                <option value="ACET Mess"></option>
-                <option value="Gas Godown"></option>
-                <option value="Akal IB Interntional School"></option>
+                <option value="Guest Room"></option>
+                <option value="SBI ATM"></option>
+                <option value="Branch Post Office"></option>
+                <option value="Baru Sahib Gurudwara"></option>
+                <option value="VIP Building"></option>
+                <option value="Chango Temple"></option>
+                <option value="Sangat Building"></option>
+                <option value="Amphitheatre"></option>
+                <option value="IB School"></option>
             </datalist>
-            <button onclick="searchLocation()" class="search-btn">Search</button>
+            <button id="getDirections" onclick="getDirections()" class="search-btn">Search</button>
         </div>
     </div>
+
+    <div id="map" style="height: 500px; width: 100%;"></div>
+    <div id="location-info" style="margin-top: 10px; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
+    </div>
+    <br>
        
-       <div class="Photo">
-            <img src="/assets/baru_sahib_map.jpeg" alt="Baru_Sahib_Map">
-       </div>
+    <section class="Photo">
+        <img src="/assets/baru_sahib_map.jpeg" alt="Baru_Sahib_Map">
+    </section>
 
-       <div class="heading">
-            <h2>List of Place Inside The Campus</h2>
-       </div>
-
-       <div class="Main_container">
-            <div class="first_card">
-                <h3 class="firstcard-title">Educational Institutions & Training Centers</h3>
-                <p>These facilities represent the educational backbone of Baru Sahib, nurturing students from primary levels to higher education. They include colleges, schools, hostels, and training centers focused on holistic, academic, and spiritual development.</p>
-                <ul>
-                    <li>2. Eternal University</li>
-                    <li>3. Akal College of Engineering</li>
-                    <li>5. Akal College of Nursing (ACN)</li>
-                    <li>17. Akal Academy Baru Sahib</li>
-                    <li>18. Akal Academy Hostel</li>
-                    <li>19. Akal Academy Main Office</li>
-                    <li>15. Teachers Training Centre</li>
-                    <li>36. Akal Vocational Institute for Boys</li>
-                    <li>40. Akal IB International School</li>
-                    <li>37. ACET and ACN Hostel</li>
-                </ul>
-                
-                <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-
-            <div class="second_card">
-                <h3 class="secondcard-title">Infrastructure, Utilities & Workshops</h3>
-                <p>These are core functional and operational units that support the day-to-day running of the campus. They include power, water, printing, production, storage, and engineering facilities.</p>
-                <ul>
-                    <li>4. Incinerator Plant</li>
-                    <li>7. ACET Workshop</li>
-                    <li>11. Carpentry Workshop</li>
-                    <li>12. Fabrication Workshop</li>
-                    <li>21. Akal Workshop and Petrol Pump</li>
-                    <li>22. Akal Water Treatment Plant</li>
-                    <li>23. Akal Sewage Treatment Plant</li>
-                    <li>24. Akal Organic Manure Plant</li>
-                    <li>25. Akal Cold Storage</li>
-                    <li>26. Akal Bakery</li>
-                    <li>27. 11 KV Sub Station</li>
-                    <li>28. Automatic Laundry</li>
-                    <li>29. Akal Milk Dairy</li>
-                    <li>35. Akal Printing Press</li>
-                    <li>39. Gas Godown</li>
-                </ul>
-                        
-                <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
+    <section class="heading">
+        <h2>Place Inside The Campus</h2>
+    <div class="Main_div">
+        <div class="box">
+            <h4>ETERNAL UNIVERSITY</h4>
+            <img src="/assets/eu.webp" alt="eu">
+            <p>Eternal University is a private university located in Baru Sahib, Himachal Pradesh. It offers education in various fields like engineering, management, health sciences, and agriculture. The campus is known for its peaceful environment, modern facilities, and focus on both academics and values.</p>
         </div>
-      
-        <div class="main_Container">
-            <div class="third_card">
-                <h3 class="thirdcard-title">Residential & Administrative Buildings</h3>
-                <p>This group includes the living quarters, administrative departments, and essential services like finance and HR that manage campus logistics and human resources.</p>
-                <ul>
-                    <li>1. Entry</li>
-                    <li>13. Teacher's Colony</li>
-                    <li>14. Granary</li>
-                    <li>16. P.R.O and H.R Department</li>
-                    <li>20. State Bank of India ATM</li>
-                    <li>31. Enquiry and Reception</li>
-                    <li>32. Guest House</li>
-                </ul>
-                
-                <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-            
-            <div class="fourth_card">
-                <h3 class="fourthcard-title">Spiritual, Community & Recreational Spaces</h3>
-                <p>These places serve the spiritual and community aspects of life in Baru Sahib. They include Gurdwaras, the Langar Hall, playgrounds, and areas for physical and spiritual rejuvenation.</p>
-                <ul>
-                    <li>6. Akal Charitable Hospital (ACH)</li>
-                    <li>8. Texnis Playground</li>
-                    <li>9. Akal Academy Playground</li>
-                    <li>10. Adventure Camp</li>
-                    <li>30. Gurudwara Baru Sahib</li>
-                    <li>33. Langer Hall</li>
-                    <li>34. Ancient Gurudwara Sahi</li>
-                </ul>
-                   
-                <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
+
+        <div class="box">
+            <h4>AKAL COLLEGE OF NURSING</h4>
+            <img src="/assets/acn.jpeg" alt="acn">
+            <P>Akal College of Nursing (ACN) – India’s first nursing college in HP, founded in 2008 under Eternal University. Offers B.Sc, M.Sc & Ph.D. programs. Accredited nationally, with strong clinical training and value‑based education for compassionate healthcare professionals.</P>
         </div>
-               <footer>
+
+        <div class="box">
+            <h4>APPLE A DAY</h4>
+            <img src="/assets/apple.webp" alt="apple">
+            <p>Apple A Day is a popular health food and juice corner inside the Eternal University campus. It offers fresh juices, fruits, healthy snacks, and light meals — a favorite spot for students and staff to grab a quick and nutritious bite.</p>
+        </div>
+
+        <div class="box">
+            <h4>NEW GIRLS HOSTEL</h4>
+            <img src="/assets/newgirlshostel.webp" alt="New_Girls_Hostel">
+            <p>New Girls Hostel – A modern 9‑storey hostel at Eternal University, with ~756 fully furnished seats, shared rooms for friendly living, campus meals, and a safe, supportive environment.</p>
+        </div>
+
+        <div class="box">
+            <h4>AKAL ACADEMY</h4>
+            <img src="/assets/akalacademy.avif" alt="akalacademy">
+            <p>Akal Academy Baru Sahib – A residential school founded in 1986. Offers CBSE, IB PYP & Cambridge curricula in a spacious Himalayan campus. Known for value-based education, modern infrastructure, and a diverse student community.</p>
+        </div>
+
+        <div class="box">
+            <h4>IB</h4>
+            <img src="/assets/ib.jpeg" alt="ib">
+            <p>IB (PYP) – An international program for Nursery to Grade V that builds curiosity, confidence, and global understanding through activity-based learning.</p>
+        </div>
+
+        <div class="box">
+            <h4>GURUDWARA BARUSAHIB</h4>
+            <img src="/assets/gurudwara.jpeg" alt="Gurudwara">
+            <p>Gurudwara Baru Sahib – A majestic spiritual center in the Valley of Divine Peace. Built from a humble mud hut in 1956, it now spans ~450 acres and anchors campus life with prayer, langar, and meditation.</p>
+        </div>
+
+        <div class="box">
+            <h4>KALGIDHAR CHARITABLE HOSPITAL</h4>
+            <img src="/assets/hospital.jpeg" alt="hospital">
+            <p>Kalgidhar Charitable Hospital – A 100+ bed charitable hospital on campus offering multi-specialty care, diagnostic services, emergency support, and free medical camps, reaching both university residents and rural communities.</p>
+        </div>
+
+        <div class="box">
+            <h4>SBI ATM</h4>
+            <img src="/assets/atm.jpg" alt="atm">
+            <p>SBI ATM at Baru Sahib Open 24/7 near the New Girls Hostel. Accessible to all for cash withdrawals and balance checks.</p>
+        </div>
+
+        <div class="box">
+            <h4>BARUSAHIB POSTOFFICE</h4>
+            <img src="/assets/postoffice.jpg" alt="postoffice">
+            <p>Barusahib Post Office (PIN 173101) – Campus branch for mail, parcels, savings, and official postal services. Typically open Mon–Sat, ~9 AM–5 PM.</p>
+        </div>
+
+        <div class="box">
+            <h4>GUEST ROOMS</h4>
+            <img src="/assets/guestroom.jpg" alt="guestroom">
+            <p>Guest Rooms – A peaceful, fully furnished guest house at Machher for faculty and visitors, featuring private rooms, attached bathrooms, and quiet surroundings.</p>
+        </div>
+
+        <div class="box">
+            <h4>AMPHITHEATER</h4>
+            <img src="/assets/amphi.jpeg" alt="amphitheatre">
+            <p>Amphitheater – A lovely outdoor venue on campus for events, performances, and lectures, set in a picturesque hillside environment.</p>
+        </div>
+        
+        <div class="box">
+            <h4>TENNIS COURT</h4>
+            <img src="/assets/tenniscourt.jpg" alt="tenniscourt">
+            <p>Tennis Court – Outdoor lawn tennis courts amidst the hills, used for practice and college tournaments, supporting an active and sporty campus life.</p>
+        </div>
+
+        <div class="box">
+            <h4>BARUSAHIB HELIPAD</h4>
+            <img src="/assets/helipad.jpeg" alt="helipad">
+            <p>Barusahib Helipad – A hilltop helipad on campus used for emergency airlifts, VIPs, and medical evacuations from nearby remote areas.</p>
+        </div>
+        
+        <div class="box">
+            <h4>SOLAR PANEL</h4>
+            <img src="/assets/solar.jpeg" alt="solar">
+            <p>Solar Panels – A 220 kW, 978‑panel system generating ~600–700 kWh/day for campus needs—solar-powered cooking, lighting, heating—showcasing our green energy leadership.</p>
+        </div>
+
+        <div class="box">
+            <h4>TEACHERS RESIDENCE BUILDING</h4>
+            <img src="/assets/teachersbuilding.webp" alt="teachersbuilding">
+            <p>Teachers’ Residence Building – Multi-story, on-campus housing for faculty, offering furnished apartments and close proximity to university facilities.</p>
+        </div>
+        
+    </div>
+    </section>
+
+    <section>
+            <footer>
         <div class="foot1">
             <img src="/assets/logo.jpeg" alt="logo">
             <p>Explore the campus.</p>
@@ -196,6 +195,8 @@
             <li>MapMyIndia</li>
         </div>
     </footer>
-        <script src="/js/common.js"></script>
+    </section>
+    <script src="/js/common.js"></script>
+    <script src="/js/aap.js"></script>
 </body>
 </html>
