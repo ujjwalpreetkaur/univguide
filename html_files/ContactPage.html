@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baru_Sahib_Navigation_System</title>
     <link rel="stylesheet" href="/css_files/contactpage.css">
+
+    <script src="/js/contact.js" defer></script>
 </head>
 <body>
     <section class="header">
@@ -28,18 +30,16 @@
         
     <section>
         <div class="Contact">
-            <form id="contactForm" onsubmit="return validateForm()" action="http://localhost:8080/php_files/connect.php" method="POST">
+            <form id="contactForm" action="http://localhost/UNIVGUIDE-1/php_files/submit_contact.php" method="POST" onsubmit="return validateForm()">
                 <h2>Contact Page</h2>
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
-                    
-                
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Enter Your E-mail ID" required>
-                    
-                
-                    <label for="message">Message</label>
-                    <input type="text" name="message" id="message" placeholder="Your Message" required>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter Your E-mail ID" required>
+
+                <label for="message">Message</label>
+                <input type="text" name="message" id="message" placeholder="Your Message" required>
                     
                 <button type="submit">Send</button>
             </form>
@@ -69,117 +69,5 @@
         </div>
     </footer>
     
-
-    <script>
-        function validateForm() {
-    // Get form input values
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-     // Basic validation
-    if (!name || !email || !message) {
-        alert("Please fill in all fields.");
-        return false;
-    }
-
-     // Email format check using regex
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.match(emailPattern)) {
-        alert("Please enter a valid email address.");
-        return false;
-    }
-
-     // Simulate sending to server
-    const formData = {name, email, message};
-        
-
-
-     console.log("Form submitted successfully!", formData);
-
-     // You can later replace this part with a real fetch to backend
-     /*
-    fetch('your-backend-endpoint', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert("Message sent successfully!");
-    })
-    .catch(error => {
-        alert("There was an error sending your message.");
-        console.error(error);
-    });
-     */
-
-    alert("Form submitted successfully!");
-
-    // Prevent default form submission
-     return false;
- }
-
-
-
-
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
-
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        // Validation
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        if (!name || !email || !message) {
-            alert("Please fill in all fields.");
-            return;
-        }
-
-        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-        if (!email.match(emailPattern)) {
-            alert("Please enter a valid email address.");
-            return;
-        }
-
-        // Send data via fetch
-        const response = await fetch("http://localhost:8080/univguide-1/connect.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ name, email, message })
-        });
-
-        try {
-            const result = await response.json();
-            console.log(result); // Optional debug
-
-            if (result.success) {
-                alert("✅ Message sent successfully!");
-                form.reset();
-            } else {
-                alert("❌ Error: " + result.message);
-            }
-        } catch (err) {
-            alert("❌ Unexpected error occurred.");
-            console.error(err);
-        }
-    });
-});
-
-
-    </script>
 </body>
 </html>
