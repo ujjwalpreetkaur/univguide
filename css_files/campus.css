@@ -57,6 +57,7 @@
         width: 100%;
         justify-content: center;
         text-align: center;
+        margin-right: 15px;
     }
     .heading h1{
         font-size: 2.5em;
@@ -239,12 +240,30 @@
 }
 
     .Photo img{
-        width: 100%;
-        border:  5px solid black;
+        width: 95%;
+        border: 5px solid black;
         height: 500px;
-        text-align: center;
-        
+        margin: 30px;
     }
+
+    @media (max-width: 600px) {
+        .Photo img{
+            width: 95%;
+            height: auto;
+            margin: 0px;
+            margin-left: 10px;
+        }
+    }
+
+    @media (min-width: 600px) and (max-width: 991px) {
+        .Photo img{
+            width: 95%;
+            height: auto;
+            margin: 0px;
+            margin-left: 10px;
+        }
+    }
+    
     .heading h2{
         text-align: center;
         margin-top: 20px;

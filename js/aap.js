@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Default campus center (replace with your campus's coordinates)
-    const defaultCampusCenter = [28.6139, 77.2090]; // Example: Delhi, India
+    const defaultCampusCenter = [31.104829, 77.173390]; // Example: Delhi, India
     const defaultZoom = 16;
 
     // Initialize the map

@@ -51,6 +51,7 @@
         width: 100%;
         justify-content: center;
         text-align: center;
+        margin-right: 15px;
     }
     .heading h1{
         font-size: 2.5em;
@@ -233,12 +234,13 @@
 }
 
   .vedio{
-    width:100%; 
+    width:97%; 
     max-height: 700px; 
     height: auto;
     border: 5px solid gray;
     border-radius: 5px;
     overflow: hidden;
+    margin-left: 20px;
   }
 
   .vedio video{
@@ -264,20 +266,21 @@
 }
 
 .image{
-    margin-top: 30px; 
-    border-radius: 25px;
+    margin: 10px; 
+    border-radius: 10px;
     overflow: hidden;
 }
 .image img{
     width: 100%;
     height: auto;
-    border-radius: 25px;
     display: block;
 }
 
 @media (max-width: 768px) {
   .vedio{
     max-height: 300px;
+    max-width: 97%;
+    margin: 5px;
   }
   .qoute{
     font-size: 1em;

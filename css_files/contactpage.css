@@ -51,6 +51,7 @@
         width: 100%;
         justify-content: center;
         text-align: center;
+        margin-right: 15px;
     }
     .heading h1{
         font-size: 2.5em;
@@ -77,6 +78,7 @@
     max-width: 120px;
   }
 }
+
 .menu-container{
   display: flex;
   justify-content: flex-start;
@@ -87,21 +89,6 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin: 30px;
 }
-
-/* .hamburger{
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  margin-left: auto;
-}
-
-.hamburger span{
-  height: 3px;
-  width: 25px;
-  background: black;
-  margin: 4px 0;
-  transition: 0.4s;
-} */
 
 .nav-links a{
   margin-left: 1em;
@@ -122,46 +109,157 @@
     margin-top: 1em;
   }
 }
+/* 
 .Contact{
-  background-color:  rgb(190, 219, 244);
-  margin-top: 40px;
-  margin-left: 300px;
-  width: 900px;
-  height: 700px;
+  justify-content: center;
+  align-items: center;
   border: 5px solid rgb(91, 170, 239);
-}
-.Contact h2{
-    text-align: center;
-    font-size: 80px;
-}
-.Contact label{
-    margin-top: 10px;
-    margin-left: 400px;
-    font-size: 40px;
-}
-.Contact input{
-    margin-top: 20px;
-    margin-left: 250px;
-    width: 400px;
-    height: 30px;
-}
-.Contact button{
-    background-color: rgb(126, 186, 238);  
-    margin-top: 50px;
-    margin-left: 320px;
-    padding: 15px;  
-    width:32%;
-    height: 50px;
-    border: none;
-    border-radius: 4px;
-    cursor:pointer;  
-}
-footer {
-  margin-top: 10px;
-  background-color: rgb(118, 183, 240);
-  color: black;
-  text-align: center;
+  border-radius: 10px;
+  background-color: rgb(190, 219, 244);
+  width: 80%;
+  height: 100vh;
+  margin: 40px;
   padding: 20px;
+}
+
+h2{
+  font-size: 60px;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  text-align: center;
+}
+
+label{
+  font-size: 40px;
+  display: block;
+  text-align: center;
+}
+
+input, textarea{
+  width: 50%;
+  padding: 10px;
+  margin: 20px auto;
+  border-radius: 5px;
+  border: 1px solid #042d46;
+  font-size: 1.2rem;
+  justify-content: center;
+  display: block;
+  text-align: center;
+}
+
+.Contact button{
+  background-color: rgb(91, 170, 239);
+  color: white;
+  margin: 20px;
+  margin-bottom: 10%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: block;
+  justify-content: center;
+} */
+
+/* Container for the contact section */
+.Contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid rgb(91, 170, 239);
+  border-radius: 10px;
+  background-color: rgb(190, 219, 244);
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Form heading */
+.Contact h2 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #042d46;
+}
+
+/* Label styling */
+label {
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: block;
+  color: #042d46;
+  text-align: center;
+}
+
+/* Input and textarea styling */
+input, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  border: 1px solid #042d46;
+  font-size: 1.2rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Submit button styling */
+.Contact button {
+  background-color: rgb(91, 170, 239);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  /* margin-left: 25%; */
+}
+
+.Contact button:hover {
+  background-color: rgb(71, 150, 220);
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .Contact {
+    padding: 30px 20px;
+  }
+
+  .Contact h2 {
+    font-size: 36px;
+  }
+
+  label {
+    font-size: 18px;
+    /* text-align: left; */
+  }
+
+  input, textarea {
+    font-size: 1rem;
+  }
+
+  .Contact button {
+    font-size: 1rem;
+    width: 100%;
+  }
+}
+
+
+
+footer{
+  background-color:rgb(118, 183, 240) ;
+  display: inline-flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  color: black;
+  width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
 }

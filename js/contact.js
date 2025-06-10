@@ -4,30 +4,30 @@ function validateForm() {
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
 
-    // Basic validation
+     // Basic validation
     if (!name || !email || !message) {
         alert("Please fill in all fields.");
         return false;
     }
 
-    // Email format check using regex
+     // Email format check using regex
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     if (!email.match(emailPattern)) {
         alert("Please enter a valid email address.");
         return false;
     }
 
-    // Simulate sending to server
+     // Simulate sending to server
     const formData = {
         name,
         email,
         message
     };
 
-    console.log("Form submitted successfully!", formData);
+     console.log("Form submitted successfully!", formData);
 
-    // You can later replace this part with a real fetch to backend
-    /*
+     // You can later replace this part with a real fetch to backend
+     /*
     fetch('your-backend-endpoint', {
         method: 'POST',
         headers: {
@@ -43,13 +43,13 @@ function validateForm() {
         alert("There was an error sending your message.");
         console.error(error);
     });
-    */
+     */
 
     alert("Form submitted successfully!");
 
     // Prevent default form submission
-    return false;
-}
+     return false;
+ }
 
 
 

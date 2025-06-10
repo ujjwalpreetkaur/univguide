@@ -17,55 +17,51 @@
         </div>
     </section>
         
-        <div class="menu-container">
-            <!-- <div class="hamburger" id="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div> -->
-            <nav class="nav-links" id="navLinks">
-              <a href="/html_files/index.html">Home</a>
-              <a href="/html_files/AboutUs.html">About</a>
-              <a href="/html_files/campus.html">Campus</a>
-              <a href="/html_files/ContactPage.html"><b>Contact</b></a>
-            </nav>
-        </div>
+    <div class="menu-container">
+        <nav class="nav-links" id="navLinks">
+            <a href="/html_files/index.html"><b>Home</b></a>
+            <a href="/html_files/AboutUs.html"><b>About</b></a>
+            <a href="/html_files/campus.html"><b>Campus</b></a>
+            <a href="/html_files/ContactPage.html"><b>Contact</b></a>
+        </nav>
+    </div>
         
-            <div  class="Contact">
-                <form id="C:\xampp\htdocs\univguide-1\connect.php" action="http://localhost:8080/univguide-1/connect.php" method="POST" onsubmit="return validateForm()">
-
-                    <H2>Contact Page</H2>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+    <section>
+        <div class="Contact">
+            <form id="C:\xampp\htdocs\univguide-1\connect.php" action="http://localhost:8080/univguide-1/connect.php" method="POST" onsubmit="return validateForm()">
+                <h2>Contact Page</h2>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
                     
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter Your E-mail ID">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Enter Your E-mail ID" required>
                     
+                <label for="message">Message</label>
+                <input type="text" name="message" id="message" placeholder="Your Message">
                     <label for="message">Message</label>
                     <input type="text" name="message" id="message" placeholder="Your Message" required>
                     
-                    <button  type="submit">Send</button>
-                </form>
-            </div>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
     <footer>
-       <div class="footer-container">
-            <div class="foot1">
-                <img src="/assets/logo.jpeg" alt="logo">
-            </div>
-            <div class="foot2">
-                <p>Other Useful Links:</p>
-                <li><a href="https://eternaluniversity.edu.in/#">Eternal University</a></li>
-                <li><a href="https://www.akalacademybarusahib.com/">Akal Academy</a></li>
-            </div>
-            <div class="foot3">
-                <p>APIs Used:</p>
-                <li>Google Maps</li>
-                <li>MapMyIndia</li>
-            </div>
-       </div>
-        <div class="footer-text-container">
-            <p class="footer-text">© 2023 Baru Sahib Navigation System. All rights reserved.</p>
-            
+        <div class="foot1">
+            <img src="/assets/logo.jpeg" alt="logo">
+            <p>Explore the campus.</p>
+        </div>
+        <div class="foot2">
+            <p>Other Useful Links:</p>
+            <li><a href="https://eternaluniversity.edu.in/#">Eternal University</a></li>
+            <li><a href="https://www.akalacademybarusahib.com/">Akal Academy</a></li>
+        </div>
+        <div class="foot3">
+            <p>APIs Used:</p>
+            <li>Google Maps</li>
+            <li>MapMyIndia</li>
         </div>
     </footer>
     <script src="/js/contact.js"></script>

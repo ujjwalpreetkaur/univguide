@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baru_Sahib_Navigation_System</title>
     <link rel="stylesheet" href="/css_files/index.css">
+    <link rel="stylesheet" href="/css_files/map.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
         crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+
 </head>
 <body>
     <section class="header">
@@ -25,7 +27,7 @@
     <div class="search-container">
 
         <div class="menu-container">
-            <div class="hamburger" id="hamburger">
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
               <span></span>
               <span></span>
               <span></span>
@@ -37,37 +39,35 @@
               <a href="/html_files/ContactPage.html"><b>Contact</b></a>
             </nav>
         </div>
-
+        
         <div class="search-bar">
             <input type="text" class="searchbox" list="search-options" id="destinationSearch" placeholder="Explore Campus..." />
             <datalist id="search-options">
-                <option value="Eternal University"></option>
-                <option value="New Girls Hostel"></option>
-                <option value="Akal College Of Nursing"></option>
-                <option value="Apple A Day"></option>
-                <option value="Akal Charitable Hospital"></option>
-                <option value="Tennis Court"></option>
-                <option value="Helipad Akal Academy Baru Sahib"></option>
-                <option value="Teacher Building"></option>
-                <option value="Solar Power Plant"></option>
                 <option value="Akal Academy Baru Sahib"></option>
-                <option value="Guest Room"></option>
-                <option value="SBI ATM"></option>
-                <option value="Branch Post Office"></option>
-                <option value="Baru Sahib Gurudwara"></option>
-                <option value="VIP Building"></option>
-                <option value="Chango Temple"></option>
-                <option value="Sangat Building"></option>
+                <option value="Akal Charitable Hospital"></option>
+                <option value="Akal College Of Nursing"></option>
                 <option value="Amphitheatre"></option>
+                <option value="Apple A Day"></option>
+                <option value="Baru Sahib Gurudwara"></option>
+                <option value="Branch Post Office"></option>
+                <option value="Eternal University"></option>
+                <option value="Guest Room"></option>
+                <option value="Helipad Akal Academy Baru Sahib"></option>
                 <option value="IB School"></option>
+                <option value="New Girls Hostel"></option>
+                <option value="Sangat Building"></option>
+                <option value="SBI ATM"></option>
+                <option value="Solar Power Plant"></option>
+                <option value="Teacher Building"></option>
+                <option value="Tennis Court"></option>
+                <option value="VIP Building"></option>                
             </datalist>
             <button id="getDirections" onclick="getDirections()" class="search-btn">Search</button>
         </div>
     </div>  
 
-    <div id="map" style="height: 500px; width: 100%;"></div>
-    <div id="location-info" style="margin-top: 10px; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
-    </div>
+    <div id="map"></div>
+    <div id="location-info"></div>
     <br>
 
 
@@ -134,8 +134,8 @@ Ensuring convenience for residents and visitors
             
         </div>
     </footer>
-    <script src="/js/common.js"></script>
     <script src="/js/aap.js"></script>
+    <script src="/js/hamburger.js"></script>
 </body> 
 
 </html>
