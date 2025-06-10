@@ -1,10 +1,9 @@
-<?php
+<!-- <?php
 // Database connection details
 $servername = "localhost";
 $username = "root";  // default XAMPP username
 $password = "";      // default is empty
 $database = "contact_form_db";
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -48,4 +47,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Close DB connection
 $conn->close();
-?>
+?> -->
